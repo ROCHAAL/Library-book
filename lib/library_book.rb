@@ -1,6 +1,4 @@
 class Book
-  
-  def add_book(title)
-    return 'title'
-  end
+def add_book(input_book)
+end
 end
