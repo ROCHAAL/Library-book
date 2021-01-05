@@ -1,16 +1,21 @@
 require 'library_book'
 
-describe 'Library'do
-it 'gives current details of a book from the library 'do
-library = Library.new
-expect(library).to be_instance_of(Library)
+describe 'Book'do
+      it 'has the title and the author of a book'do
+      book = Book.new('title', 'author')
+      expect(book).to be_instance_of(Book)
   end
-it 'add books to the library.'do
-library =  Library.new
-library.add_books(10)
-expect(library).to respond_to(:add_books).with.(1).argument
+describe 'Library' do
+  it ' has a list of books'do
+    library = Library.new
+    expect(library).to be_instance_of(Library)
+    end
   end
-end
+end 
+
+
+
+
 
 
 #input                         output

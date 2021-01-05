@@ -1,12 +1,13 @@
-class Library
-def initialize(title, author, new_books)
-  @title = title
-  @author = author
-  @new_books = new_books
-end
 
-
-  def add_books(new_books)
-
+class Book
+  def initialize(title, author)
+    @title = title
+    @author = author
   end
-end
+
+  class Library
+    def initialize
+      @books = []
+
+    end
+  end
