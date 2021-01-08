@@ -10,8 +10,29 @@ describe 'Library' do
     library = Library.new
     expect(library).to be_instance_of(Library)
     end
+    it 'add book to the library 'do
+      library = Library.new
+      library.add_books(5)
+      expect(library).to respond_to(:add_books).with(1).argument
+    end
+    it 'list the books existent in the Library'do
+      library = Library.new
+      library.list_books
+      expect(library).to respond_to(:list_books)
+    end
+    it 'mark the books that are damaged'do
+    library = Library.new
+    library.damaged_books
+    expect(library).to respond_to(:damaged_books)
+    end
+    it 'count the existent books'do
+    library = Library.new
+    library.count_books
+    expect(library).to respond_to(:count_books)
+    end
   end
-end 
+
+end
 
 
 
