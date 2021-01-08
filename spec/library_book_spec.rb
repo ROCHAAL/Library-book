@@ -20,7 +20,7 @@ describe 'Library' do
       library.list_books
       expect(library).to respond_to(:list_books)
     end
-    it 'mark the books that are damaged'do
+    it 'marks the books that are damaged'do
     library = Library.new
     library.damaged_books
     expect(library).to respond_to(:damaged_books)
