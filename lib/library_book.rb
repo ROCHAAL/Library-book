@@ -25,6 +25,6 @@ end
       return
     end
     def count_books
-      @books.select{ |book| book.count}
+      @books.each { |book| counts[book] +=1 }
     end
   end
