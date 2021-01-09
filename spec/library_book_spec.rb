@@ -30,6 +30,11 @@ describe 'Library' do
     library.count_books
     expect(library).to respond_to(:count_books)
     end
+    it 'list all book titles by specific author'do
+    library = Library.new
+    library.title_author
+    expect(library).to respond_to(:title_author)
+  end
   end
 
 end

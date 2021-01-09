@@ -27,4 +27,8 @@ end
     def count_books
       @books.each { |book| counts[book] +=1 }
     end
+
+    def title_author
+      @book.find { |title| title.author = true }.select!
+    end
   end
