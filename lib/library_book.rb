@@ -1,15 +1,24 @@
 
 class Book
+  attr_reader :title, :author, :damaged
   def initialize(title, author)
     @title = title
     @author = author
+    @damaged = false
   end
+
+def mark_as_damaged
+  @damaged = true
 end
 
+end
+
+
   class Library
+    attr_reader :books
     def initialize
       @books = []
-      @book_damaged = false
+
     end
 
     def add_books(new_books)
@@ -28,7 +37,8 @@ end
       @books.each { |book| counts[book] +=1 }
     end
 
-    def title_author
-      @book.find { |title| title.author = true }.select!
+    def title_author(author)
+
+      @books.find { |title| title.author == author }
     end
   end
