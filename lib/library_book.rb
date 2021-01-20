@@ -5,6 +5,8 @@ class Book
     @title = title
     @author = author
     @damaged = false
+
+
   end
 
 def mark_as_damaged
@@ -15,15 +17,19 @@ end
 
 
   class Library
-    attr_reader :books
+    attr_reader :books, :author
     def initialize
       @books = []
-
+      @new_lilst = []
     end
 
     def add_books(new_books)
       @books.push(new_books)
     end
+
+
+
+
 
     def list_books
       @books
@@ -39,6 +45,9 @@ end
 
     def title_author(author)
 
-      @books.find { |title| title.author == author }
+      @books.each {  |book| @new_list << book + "author"  }.map
+
+
     end
+
   end
