@@ -45,13 +45,13 @@ describe 'Library' do
     expect(library).to respond_to(:count_books)
     end
 
-    it 'list all book titles by specific author'do
+    it 'list all books titles by specific author'do
     library = Library.new
     book = Book.new('title', 'author')
     library.add_books(book)
-    expect(library.title_author('author')).to eq('title')
+    expect(library.title_author('author')).to eq(['title'])
   end
-  
+
   end
 
 end
@@ -59,7 +59,7 @@ end
 
 
 
-
+#√
 
 #input                         output
 #add_books                      10 books

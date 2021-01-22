@@ -17,10 +17,10 @@ end
 
 
   class Library
-    attr_reader :books, :author
+    attr_reader :books, :author, :title
     def initialize
       @books = []
-      @new_lilst = []
+
     end
 
     def add_books(new_books)
@@ -43,11 +43,12 @@ end
       @books.each { |book| counts[book] +=1 }
     end
 
-    def title_author(author)
-
-      @books.each {  |book| @new_list << book + "author"  }.map
+   def title_author(author)
 
 
-    end
+  @books.map { |author| author.title }
+
+
+  end
 
   end
