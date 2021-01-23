@@ -46,7 +46,7 @@ end
    def title_author(author)
 
 
- @books.select { |book| author.include?[book] }.map { |x| x.title }
+  @books.select { |book| book.author.include? }.map { |x| x.title }
 
 
   end
