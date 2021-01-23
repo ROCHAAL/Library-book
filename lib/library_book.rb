@@ -37,7 +37,7 @@ end
     def damaged_books
       @books.select{ |book| book.book_damaged? true }
 
-      return
+      return 
     end
     def count_books
       @books.each { |book| counts[book] +=1 }
@@ -46,7 +46,7 @@ end
    def title_author(author)
 
 
-  @books.select { |book| book.author.include? }.map { |x| x.title }
+  @books.select { |book| book.author }.map { |x| x.title }
 
 
   end
