@@ -43,7 +43,7 @@ end
     end
 
     def title_author(author)
-      @books.select { |book| book.author }.map { |x| x.title }
+      @books.select { |book| book.author == author }.map { |book| book.title }
     end
 
   end

@@ -47,16 +47,22 @@ describe 'Library' do
 
     it 'list all books titles by specific author'do
     library = Library.new
-    book = Book.new('title', 'author')
+    book = Book.new('Mindset', 'Dweck')
+    book2 = Book.new('Pinocchio', 'Morpugo')
     library.add_books(book)
-    expect(library.title_author('author')).to eq(['title'])
-    
+    library.add_books(book2)
+    expect(library.title_author('Dweck')).to eq(['Mindset'])
+
+
   end
+  
 
   end
 
 end
 
+# count the damaged books
+# As a user I can see if I have more than one copy of the same book
 
 
 
