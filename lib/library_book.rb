@@ -48,6 +48,6 @@ end
     end
 
     def iqual_books(similar_book_input)
-      @books.select { |book| book.similar_books == similar_book_input}
+      @books.select { |book| book.similar_books == similar_book_input}.map{ |book| book.title}
     end
   end
