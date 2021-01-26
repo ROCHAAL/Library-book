@@ -67,10 +67,10 @@ end
 it 'check if there are more than one copy of the same book.'do
 library = Library.new
 book = Book.new('Thousand moons', 'author')
-book2 = Book.new('title', 'author')
+book2 = Book.new('Thousand moons', 'author')
 library.add_books(book)
 library.add_books(book2)
-expect(library.iqual_books('Thousand moons')).to eq('Thousand moons')
+expect(library.iqual_books(1)).to eq(2)
 
 end
 
