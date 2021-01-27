@@ -70,7 +70,8 @@ book = Book.new('Thousand moons', 'author')
 book2 = Book.new('Thousand moons', 'author')
 library.add_books(book)
 library.add_books(book2)
-expect(library.iqual_books(1)).to eq(2)
+library.count_books
+expect(library.iqual_books('title')).to eq(2)
 
 end
 
@@ -78,6 +79,9 @@ end
 
 end
 
+
+
+#I would like to see a list of authors for the books that are damaged
 # count the damaged books
 # As a user I can see if I have more than one copy of the same book
 

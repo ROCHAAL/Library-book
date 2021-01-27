@@ -18,7 +18,7 @@ end
 
 
   class Library
-    attr_reader :books, :author, :title
+    attr_reader :books, :author, :title, :similar_books
     def initialize
       @books = []
 
@@ -47,7 +47,7 @@ end
       @books.select { |book| book.author == author }.map { |book| book.title }
     end
 
-    def iqual_books(similar_book_input)
-      @books.select { |book| book.similar_books == similar_book_input}.map{ |book| book.title}
-    end
+     def iqual_books(title)
+       @books.select { |book| book.title }.count
+     end
   end
