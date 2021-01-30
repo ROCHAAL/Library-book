@@ -8,6 +8,7 @@ class Book
     @similar_books = similar_books
 
 
+
   end
 
 def mark_as_damaged
@@ -40,14 +41,26 @@ end
     end
 
     def count_books
+
       @books.select { |book| book.damaged }.count
+
     end
 
-    def title_author(author)
-      @books.select { |book| book.author == author }.map { |book| book.title }
+    def title_author(author_input)
+      @books.select { |book| book.author == author_input }.map { |book| book.title }
     end
 
-     def iqual_books(title)
-       @books.select { |book| book.title }.count
-     end
+      def iqual_books(input_title)
+          @similar_books = []
+          @books.select { |book| book.title == input_title}.count(1)
+      end
+       #|book|{ |name| counts[name] += 1 }
+       #{ |book| book.title }.count
+       #  @books.select { |book| book.title == input_title.similar_books.push(title)}.count
+          #|book|{ |name| counts[name] += 1 }
+         def number_similar_books
+           @books.select { |book| book.similar_book }.count(2)
+         end
+
+
   end

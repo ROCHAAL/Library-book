@@ -64,21 +64,32 @@ describe 'Library' do
 end
 
   end
-it 'check if there are more than one copy of the same book.'do
-library = Library.new
-book = Book.new('Thousand moons', 'author')
-book2 = Book.new('Thousand moons', 'author')
-library.add_books(book)
-library.add_books(book2)
-library.count_books
-expect(library.iqual_books('title')).to eq(2)
+  it 'check if there are more than one copy of the same book.'do
+  library = Library.new
+  book = Book.new('Thousand moons', 'Barry')
+  book2 = Book.new('Pinocchio', 'Morpurgo')
+  library.count_books
+  library.add_books(book)
+  library.add_books(book2)
+  expect(library.iqual_books('Thousand')).to eq(1)
 
+  it 'shows how many copies of the same book exist.'do
+  library = Library.new
+  book = Book.new('Enola', 'Roberts')
+  book2 = Book.new('Pinocchio', 'Morpugo')
+  book3 = Book.new('Enola', 'Roberts')
+  library.add_books(book)
+  library.add_books(book2)
+  library.add_books(book3)
+  expect(library.number_similar_books).to eq(2)
 end
 
 
 
-end
+end 
 
+  end
+#
 
 
 #I would like to see a list of authors for the books that are damaged
