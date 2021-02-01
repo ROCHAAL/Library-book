@@ -5,7 +5,7 @@ class Book
     @title = title
     @author = author
     @damaged = false
-    @similar_books = similar_books
+
 
 
 
@@ -19,7 +19,7 @@ end
 
 
   class Library
-    attr_reader :books, :author, :title, :similar_books
+    attr_reader :books, :author, :title
     def initialize
       @books = []
 
@@ -41,6 +41,11 @@ end
     end
 
     def count_books
+      @books.select { |book| counts[book] +=1}
+
+    end
+
+    def count_damaged_books
 
       @books.select { |book| book.damaged }.count
 
@@ -50,16 +55,12 @@ end
       @books.select { |book| book.author == author_input }.map { |book| book.title }
     end
 
-      def iqual_books(input_title)
-          @similar_books = []
-          @books.select { |book| book.title == input_title}.count(1)
+      def iqual_books(title, author)
+         @books.select { |book| book.title == title && book.author == author }.count > 0
       end
-       #|book|{ |name| counts[name] += 1 }
-       #{ |book| book.title }.count
-       #  @books.select { |book| book.title == input_title.similar_books.push(title)}.count
-          #|book|{ |name| counts[name] += 1 }
-         def number_similar_books
-           @books.select { |book| book.similar_book }.count(2)
+
+         def number_similar_books(title, author)
+           @books.select { |book| book.title == title && book.author == author}.count
          end
 
 

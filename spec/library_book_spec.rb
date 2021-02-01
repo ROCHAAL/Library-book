@@ -30,7 +30,7 @@ describe 'Library' do
     it 'list the books existent in the Library'do
       library = Library.new
       library.list_books
-      expect(library).to respond_to(:list_books)
+      expect(library).to respond_to(:list_books) #What could be used instead of respond_to??
 
     end
     it 'marks the books that are damaged'do
@@ -60,18 +60,20 @@ describe 'Library' do
   book = Book.new('title', 'author')
   library.add_books(book)
   book.mark_as_damaged
-  expect(library.count_books).to  eq(1)
+  expect(library.count_damaged_books).to  eq(1)
 end
 
   end
-  it 'check if there are more than one copy of the same book.'do
+  it 'checks if there are copy of the same book.'do
   library = Library.new
   book = Book.new('Thousand moons', 'Barry')
   book2 = Book.new('Pinocchio', 'Morpurgo')
-  library.count_books
+  book3 = Book.new('Thousand moons', 'Barry')
   library.add_books(book)
   library.add_books(book2)
-  expect(library.iqual_books('Thousand')).to eq(1)
+  library.add_books(book3)
+  expect(library.iqual_books('Thousand moons', 'Barry')).to eq(true)
+end
 
   it 'shows how many copies of the same book exist.'do
   library = Library.new
@@ -81,14 +83,14 @@ end
   library.add_books(book)
   library.add_books(book2)
   library.add_books(book3)
-  expect(library.number_similar_books).to eq(2)
+  expect(library.number_similar_books('Enola', 'Roberts')).to eq(2)
 end
 
 
 
-end 
+end
 
-  end
+
 #
 
 
@@ -96,6 +98,10 @@ end
 # count the damaged books
 # As a user I can see if I have more than one copy of the same book
 
+
+#write a test that return false for iqual_books.
+# number_similar_books it will return 0 when there are no copies of the same book
+# number_similar_books it return zero when there are more than one copie of the book with the same title , but different authors
 
 
 #√
